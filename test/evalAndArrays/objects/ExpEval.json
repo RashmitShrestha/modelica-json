@@ -1,0 +1,65 @@
+{
+  "instances": {
+    "ExpEval": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ExpEval.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "nZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ExpEval",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "nZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "5"
+            }
+          }
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ExpEval.mo"
+    },
+    "newNZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ExpEval",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "newNZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "10"
+            }
+          }
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ExpEval.mo"
+    }
+  },
+  "requiredReferences": {}
+}

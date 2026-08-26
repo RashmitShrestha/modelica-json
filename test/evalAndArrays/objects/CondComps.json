@@ -1,0 +1,167 @@
+{
+  "instances": {
+    "CondComps": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "nZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "CondComps",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "nZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1"
+            }
+          }
+        },
+        "description": {
+          "description_string": "# of zones"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo"
+    },
+    "conditionalVal": {
+      "type_prefix": "parameter",
+      "type_specifier": "Boolean",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "CondComps",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "conditionalVal",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "true"
+            }
+          }
+        },
+        "description": {
+          "description_string": "expected to be true"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo"
+    },
+    "u": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "CondComps",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u"
+        },
+        "description": {
+          "description_string": "Measured signal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo"
+    },
+    "y": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "CondComps",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y"
+        },
+        "description": {
+          "description_string": "Control signal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo"
+    },
+    "multKeep": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "CondComps",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "multKeep",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "kept"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\CondComps.mo"
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "u": [
+        "multKeep.u"
+      ],
+      "multKeep.y": [
+        "y"
+      ]
+    }
+  }
+}

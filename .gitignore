@@ -16,3 +16,4 @@ modelica-json.log
 .nyc_output
 .DS_Store
 .vscode
+/test/diffs

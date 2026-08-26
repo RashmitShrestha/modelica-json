@@ -1,0 +1,216 @@
+{
+  "instances": {
+    "ArrayToReplicator": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "nZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "nZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "# of zones"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo"
+    },
+    "u": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u"
+        },
+        "description": {
+          "description_string": "input signal for the replicator"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo"
+    },
+    "y_1": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_1"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "y_2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_2"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "y_3": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_3"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
+    },
+    "realScaRep": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Routing.RealScalarReplicator",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayToReplicator",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "realScaRep",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "nout",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "3"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "replicates the input to nZon outputs"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayToReplicator.mo"
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "u": [
+        "realScaRep.u"
+      ],
+      "realScaRep.y_1": [
+        "y_1"
+      ],
+      "realScaRep.y_2": [
+        "y_2"
+      ],
+      "realScaRep.y_3": [
+        "y_3"
+      ]
+    }
+  }
+}

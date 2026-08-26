@@ -1,0 +1,331 @@
+{
+  "instances": {
+    "Threepeat": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "inpOne": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "inpOne",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1"
+            }
+          }
+        },
+        "description": {
+          "description_string": "first instance value"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "inpTwo": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "inpTwo",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "2"
+            }
+          }
+        },
+        "description": {
+          "description_string": "second instance value"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "inpThr": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "inpThr",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "third instance value"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "u": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u"
+        },
+        "description": {
+          "description_string": "input signal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "y": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y"
+        },
+        "description": {
+          "description_string": "sum of the three outputs"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "uni1": {
+      "type_specifier": "evalAndArrays.Threepeat.uni1",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "uni1",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "inpVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "expect inpVal = 1, derivVal = 2"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "uni2": {
+      "type_specifier": "evalAndArrays.Threepeat.uni2",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "uni2",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "inpVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "expect inpVal = 2, derivVal = 3"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "uni3": {
+      "type_specifier": "evalAndArrays.Threepeat.uni3",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "uni3",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "inpVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "3"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "expect inpVal = 3, derivVal = 4"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    },
+    "mulSum": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiSum",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Threepeat",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "mulSum",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "nin",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "3"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "sum of the three instance outputs"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "u": [
+        "uni1.u",
+        "uni2.u",
+        "uni3.u"
+      ],
+      "uni1.y": [
+        "mulSum.u_1"
+      ],
+      "uni2.y": [
+        "mulSum.u_2"
+      ],
+      "uni3.y": [
+        "mulSum.u_3"
+      ],
+      "mulSum.y": [
+        "y"
+      ]
+    }
+  }
+}

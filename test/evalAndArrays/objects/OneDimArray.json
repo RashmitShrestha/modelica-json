@@ -1,0 +1,441 @@
+{
+  "instances": {
+    "OneDimArray": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "nZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "nZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "# of zones"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo"
+    },
+    "k": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "k",
+          "array_subscripts": [
+            {
+              "expression": {
+                "simple_expression": "3"
+              }
+            }
+          ],
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "{1,2,3}"
+            }
+          }
+        },
+        "description": {
+          "description_string": "seen as {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": true,
+      "arraySubscripts": "[3]",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo"
+    },
+    "u_1": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u_1"
+        },
+        "description": {
+          "description_string": "input of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "u",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "u_2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u_2"
+        },
+        "description": {
+          "description_string": "input of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "u",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "u_3": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u_3"
+        },
+        "description": {
+          "description_string": "input of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "u",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
+    },
+    "y_1": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_1"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "y_2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_2"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "y_3": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y_3"
+        },
+        "description": {
+          "description_string": "output of each zone"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "y",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
+    },
+    "multer_1": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "multer_1",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "multer",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "multer_2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "multer_2",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "multer",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "multer_3": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "multer_3",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "3"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "multer",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "u_1": [
+        "multer_1.u"
+      ],
+      "u_2": [
+        "multer_2.u"
+      ],
+      "u_3": [
+        "multer_3.u"
+      ],
+      "multer_1.y": [
+        "y_1"
+      ],
+      "multer_2.y": [
+        "y_2"
+      ],
+      "multer_3.y": [
+        "y_3"
+      ]
+    }
+  }
+}

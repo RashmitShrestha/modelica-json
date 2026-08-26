@@ -1,0 +1,11 @@
+{
+  "instances": {
+    "evalAndArrays": {
+      "within": "",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\package.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "package"
+    }
+  },
+  "requiredReferences": {}
+}

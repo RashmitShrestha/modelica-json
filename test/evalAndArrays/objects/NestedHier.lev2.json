@@ -1,0 +1,168 @@
+{
+  "instances": {
+    "NestedHier.lev2": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block",
+      "instanceOf": "evalAndArrays.NestedHier_Level2"
+    },
+    "nZon": {
+      "type_prefix": "parameter",
+      "type_specifier": "Integer",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "NestedHier.lev2",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "nZon",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "from the level above"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+    },
+    "mult": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "NestedHier.lev2",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "mult",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "4"
+            }
+          }
+        },
+        "description": {
+          "description_string": "from the level above"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+    },
+    "u": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "NestedHier.lev2",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "u"
+        },
+        "description": {
+          "description_string": "input signal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+    },
+    "y": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "NestedHier.lev2",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y"
+        },
+        "description": {
+          "description_string": "output signal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+    },
+    "lev3": {
+      "type_specifier": "evalAndArrays.NestedHier.lev2.lev3",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "NestedHier.lev2",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "lev3",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "mult",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "1.333"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "Expect mult = 4/3"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "u": [
+        "lev3.u"
+      ],
+      "lev3.y": [
+        "y"
+      ]
+    }
+  }
+}

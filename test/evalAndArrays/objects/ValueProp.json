@@ -1,0 +1,285 @@
+{
+  "instances": {
+    "ValueProp": {
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo",
+      "type": "long_class_specifier",
+      "class_prefixes": "block"
+    },
+    "input1": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "input1",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1"
+            }
+          }
+        },
+        "description": {
+          "description_string": "user supplied, should equal 1"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "input2": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "input2",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "2"
+            }
+          }
+        },
+        "description": {
+          "description_string": "user supplied, should equal 2"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "derivedVal": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "derivedVal",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "2"
+            }
+          }
+        },
+        "description": {
+          "description_string": "derived from supplied value"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "y": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "y"
+        },
+        "description": {
+          "description_string": "output"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "con1": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.Sources.Constant",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "con1",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "1"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "carries input1 into the sequence"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "con2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.Sources.Constant",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "con2",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "carries input2 into the sequence"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "add2": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.Add",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "add2"
+        },
+        "description": {
+          "description_string": "sums input1 and input2"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    },
+    "multer": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ValueProp",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "multer",
+          "modification": {
+            "class_modification": [
+              {
+                "element_modification_or_replaceable": {
+                  "final": true,
+                  "element_modification": {
+                    "name": "k",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "2"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": {
+          "description_string": "multiplies value by the derivedVal"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ValueProp.mo"
+    }
+  },
+  "requiredReferences": {
+    "connections": {
+      "con1.y": [
+        "add2.u1"
+      ],
+      "con2.y": [
+        "add2.u2"
+      ],
+      "add2.y": [
+        "multer.u"
+      ],
+      "multer.y": [
+        "y"
+      ]
+    }
+  }
+}
