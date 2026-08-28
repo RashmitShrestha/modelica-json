@@ -76,10 +76,10 @@ parser.addArgument(
   }
 )
 parser.addArgument( // argument to specify value propogation json file. adding value prop only for modelica -> cxf pipeline
-  ['-vp', '--value_prop'],
+  ['-pv', '--parameter_value'],
   {
-    help: 'Specify value propogation json file',
-    defaultValue: 'value_prop.json'
+    help: 'Specify a file for parameter values with the default being params.json',
+    defaultValue: 'params.json'
   }
 )
 
@@ -132,7 +132,7 @@ if (args.output === 'modelica') {
     function (resolve, reject) {
       const moFiles = ut.getMoFiles(args.file)
       // Parse the json representation for moFiles
-      jsons = pa.getJsons(moFiles, args.output, args.directory, args.prettyPrint, args.elementary, args.cxfCore, args.mode, args.value_prop)
+      jsons = pa.getJsons(moFiles, args.output, args.directory, args.prettyPrint, args.elementary, args.cxfCore, args.mode, args.parameter_value)
       resolve(0)
     }
   )

@@ -15,10 +15,14 @@ const hp = require('./helpers_test')
 logger.level = 'error'
 
 // Layout of the evalAndArrays test package:
-//   evalAndArrays/ -- the sequences under test, a Modelica package so the folder
-//                    name must equal the package name declared in its package.mo
-//   objects/ -- the objects json every sequence is expected to produce
-//   value_prop/ -- user supplied parameter values, only for the sequences needing them
+//   test/evalAndArrays/ -- the sequences under test, a Modelica package so the
+//                    folder name must equal the package name declared in its package.mo.
+//                    These Modelica files are the only hand written input; everything
+//                    else lives under test/reference/ and is derived from them.
+//   test/reference/objects/evalAndArrays/ -- the objects json every sequence is
+//                    expected to produce
+//   test/reference/params/evalAndArrays/params.json -- user supplied parameter values,
+//                    keyed by sequence name, only for the sequences needing them
 
 // order of exec for this file
 // 1. Parse the Modelica files to generate the objects json.
@@ -38,10 +42,15 @@ logger.level = 'error'
 // the bottleneck is the correctness of the objects layer. Thus the cxf creator is unaware of the expression evaluation
 // and array support functionality of the previous layer, it simply works with what it's handed
 
-const moDir = path.join('test', 'evalAndArrays', 'evalAndArrays')
-const packageDir = path.join(__dirname, 'evalAndArrays')
-const referenceDir = path.join(packageDir, 'objects')
-const valuePropDir = path.join(packageDir, 'value_prop')
+const moDir = path.join('test', 'evalAndArrays')
+const referenceDir = path.join(__dirname, 'reference', 'objects', 'evalAndArrays')
+const paramsFile = path.join(__dirname, 'reference', 'params', 'evalAndArrays', 'params.json')
+
+// user supplied parameter values of the package, keyed by sequence name; an
+// absent file simply means no sequence of the package takes supplied values
+const userValues = fs.existsSync(paramsFile)
+  ? JSON.parse(fs.readFileSync(paramsFile, 'utf8'))
+  : {}
 
 // retrievers the current set of test cases from the reference objects json
 //   mainCases -- the top level sequences
@@ -57,7 +66,7 @@ mo.describe('evaluation and arrays', function () {
       if (fs.existsSync(hp.diffDir())) ut.removeDir(hp.diffDir())
       pa.getJsons(ut.getMoFiles(moDir), 'semantic', 'current', true,
         /* generateElementary= */ false, /* generateCxfCore= */ false,
-        /* mode= */ 'cdl', /* valueProp= */ valuePropDir)
+        /* mode= */ 'cdl', /* valueProp= */ paramsFile)
     })
 
     // remove after running the tests just in case; the dumps a failing
@@ -117,25 +126,23 @@ mo.describe('evaluation and arrays', function () {
 
   mo.describe('Testing the expected objects', function () {
     // testing the generated object files against the expected sequences
-    mo.it('Every value_prop file belongs to a sequence of the package', function () {
-      // checking if every value_prop file belongs to a sequence of the package
-      if (!fs.existsSync(valuePropDir)) return
-
-      const orphans = hp.jsonBaseNames(valuePropDir)
+    mo.it('Every entry of params.json belongs to a sequence of the package', function () {
+      // checking if every sequence named in params.json is one of this package
+      const orphans = Object.keys(userValues)
         .filter(function (name) { return !mainCases.includes(name) })
-      as.deepStrictEqual(orphans, [], 'value_prop files with no matching sequence: ' + orphans.join(', '))
+      as.deepStrictEqual(orphans, [], 'params.json entries with no matching sequence: ' + orphans.join(', '))
     })
 
     mainCases.forEach(function (name) {
-      const inputPath = path.join(valuePropDir, name + '.json')
+      const supplied = userValues[name]
 
-      if (!fs.existsSync(inputPath)) return
+      if (supplied === undefined) return
 
       mo.it('values in ' + name + ' propogated correctly', function () {
         // for each parameter-value pair in the input file, check against the expected objects
         // ensure that the value in the input file matches the value in the expected objects
 
-        Object.entries(JSON.parse(fs.readFileSync(inputPath, 'utf8'))).forEach(function ([parameter, value]) {
+        Object.entries(supplied).forEach(function ([parameter, value]) {
           const instance = hp.readNormalizedObjects(hp.objectsJsonPath(referenceDir, name)).instances[parameter]
           as.ok(instance !== undefined, name + ' declares no parameter named ' + parameter)
 
@@ -144,7 +151,7 @@ mo.describe('evaluation and arrays', function () {
           hp.compare(hp.parameterValue(instance), String(value),
             name + '.' + parameter, differences, 0.001)
           as.deepStrictEqual(differences, [],
-            'Value supplied in ' + inputPath + ' is not the one the expected objects carry: ' +
+            'Value supplied for ' + name + ' in ' + paramsFile + ' is not the one the expected objects carry: ' +
               differences.join(', '))
         })
       })

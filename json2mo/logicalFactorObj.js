@@ -6,7 +6,12 @@ function parse (content, rawJson = false) {
     moOutput += 'not '
   }
   if (content.arithmetic_expressions) {
-    // arithmetic expression can be a string or an object with a name property
+
+    // content comes in two shapes: 
+    // either a bare string when none of the terms are structured
+    // or an object carrying a name property
+    // depending on the shape and the type of file that the expression is in
+ 
     const name = (expression) => {
       if (typeof expression === 'string') {
         return expression
