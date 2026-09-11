@@ -2,7 +2,7 @@
   "instances": {
     "OneDimArray": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block"
     },
@@ -34,9 +34,9 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo"
     },
-    "k": {
+    "k_1": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
@@ -44,34 +44,114 @@
       "long_class_specifier_identifier": "OneDimArray",
       "single_component_list": {
         "declaration": {
-          "identifier": "k",
-          "array_subscripts": [
-            {
-              "expression": {
-                "simple_expression": "3"
-              }
-            }
-          ],
+          "identifier": "k_1",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "{1,2,3}"
+              "simple_expression": "1"
             }
           }
         },
         "description": {
-          "description_string": "seen as {1, 2, 3}"
+          "description_string": "Seen as {1, 2, 3}"
         }
       },
       "annotation": null,
       "semantics": {},
       "cdl_annotations": {},
-      "isVector": true,
-      "arraySubscripts": "[3]",
+      "isVector": false,
+      "arraySubscripts": "",
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "k",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "k_2": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "k_2",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "2"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Seen as {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "k",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "k_3": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "OneDimArray",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "k_3",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Seen as {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
+      "arrayExpansion": {
+        "arrayName": "k",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
     },
     "u_1": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
@@ -83,7 +163,7 @@
           "identifier": "u_1"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -94,7 +174,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -115,7 +195,7 @@
           "identifier": "u_2"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -126,7 +206,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -147,7 +227,7 @@
           "identifier": "u_3"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -158,7 +238,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -179,7 +259,7 @@
           "identifier": "y_1"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -190,7 +270,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "y",
         "size": [
@@ -211,7 +291,7 @@
           "identifier": "y_2"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -222,7 +302,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "y",
         "size": [
@@ -243,7 +323,7 @@
           "identifier": "y_3"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -254,7 +334,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "y",
         "size": [
@@ -293,7 +373,7 @@
           }
         },
         "description": {
-          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+          "description_string": "One instance per zone, expect k = {1, 2, 3}"
         }
       },
       "annotation": null,
@@ -304,7 +384,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "multer",
         "size": [
@@ -343,7 +423,7 @@
           }
         },
         "description": {
-          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+          "description_string": "One instance per zone, expect k = {1, 2, 3}"
         }
       },
       "annotation": null,
@@ -354,7 +434,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "multer",
         "size": [
@@ -393,7 +473,7 @@
           }
         },
         "description": {
-          "description_string": "one instance per zone, expect k = {1, 2, 3}"
+          "description_string": "One instance per zone, expect k = {1, 2, 3}"
         }
       },
       "annotation": null,
@@ -404,7 +484,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\OneDimArray.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\OneDimArray.mo",
       "arrayExpansion": {
         "arrayName": "multer",
         "size": [

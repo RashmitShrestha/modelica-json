@@ -1,21 +1,21 @@
 {
   "instances": {
-    "Threepeat.uni3": {
+    "Flags_Unit.uniBot": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block",
-      "instanceOf": "evalAndArrays.Threepeat_Unit"
+      "instanceOf": "evalAndArrays.Flags_Unit"
     },
-    "inpVal": {
+    "nZon": {
       "type_prefix": "parameter",
-      "type_specifier": "Real",
+      "type_specifier": "Integer",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
       "single_component_list": {
         "declaration": {
-          "identifier": "inpVal",
+          "identifier": "nZon",
           "modification": {
             "equal": true,
             "expression": {
@@ -24,7 +24,7 @@
           }
         },
         "description": {
-          "description_string": "input value, different per instance"
+          "description_string": "# of zones, propagated from the parent"
         }
       },
       "annotation": null,
@@ -35,26 +35,26 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
-    "derivVal": {
+    "status": {
       "type_prefix": "parameter",
-      "type_specifier": "Real",
+      "type_specifier": "Boolean",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
       "single_component_list": {
         "declaration": {
-          "identifier": "derivVal",
+          "identifier": "status",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "4"
+              "simple_expression": "true"
             }
           }
         },
         "description": {
-          "description_string": "derived value, different per instance"
+          "description_string": "Flag, propagated from the parent"
         }
       },
       "annotation": null,
@@ -65,19 +65,49 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
+    },
+    "conditional": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "conditional",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Derived inside the sub sequence, expect 3"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
     "u": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
       "single_component_list": {
         "declaration": {
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -88,19 +118,19 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
     "y": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
       "single_component_list": {
         "declaration": {
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,
@@ -111,54 +141,13 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
-    },
-    "multer": {
-      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
-      "type": "element",
-      "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
-      "single_component_list": {
-        "declaration": {
-          "identifier": "multer",
-          "modification": {
-            "class_modification": [
-              {
-                "element_modification_or_replaceable": {
-                  "final": true,
-                  "element_modification": {
-                    "name": "k",
-                    "modification": {
-                      "equal": true,
-                      "expression": {
-                        "simple_expression": "3"
-                      }
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        "description": {
-          "description_string": "Gain of this instance"
-        }
-      },
-      "annotation": null,
-      "semantics": {},
-      "cdl_annotations": {},
-      "isVector": false,
-      "arraySubscripts": "",
-      "replaceable": null,
-      "constraining_clause": null,
-      "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
     "adder": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Reals.AddParameter",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni3",
+      "long_class_specifier_identifier": "Flags_Unit.uniBot",
       "single_component_list": {
         "declaration": {
           "identifier": "adder",
@@ -172,7 +161,7 @@
                     "modification": {
                       "equal": true,
                       "expression": {
-                        "simple_expression": "4"
+                        "simple_expression": "3"
                       }
                     }
                   }
@@ -182,7 +171,7 @@
           }
         },
         "description": {
-          "description_string": "Offset of this instance"
+          "description_string": "The one elementary block of the sub sequence"
         }
       },
       "annotation": null,
@@ -193,15 +182,12 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     }
   },
   "requiredReferences": {
     "connections": {
       "u": [
-        "multer.u"
-      ],
-      "multer.y": [
         "adder.u"
       ],
       "adder.y": [

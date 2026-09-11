@@ -2,7 +2,7 @@
   "instances": {
     "ArrayValExpr": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block"
     },
@@ -34,7 +34,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo"
     },
     "kBas": {
       "type_prefix": "parameter",
@@ -53,7 +53,7 @@
           }
         },
         "description": {
-          "description_string": "base the array expressions are built from"
+          "description_string": "Base the array expressions are built from"
         }
       },
       "annotation": null,
@@ -64,9 +64,9 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo"
     },
-    "kZon": {
+    "kZon_1": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
@@ -74,34 +74,114 @@
       "long_class_specifier_identifier": "ArrayValExpr",
       "single_component_list": {
         "declaration": {
-          "identifier": "kZon",
-          "array_subscripts": [
-            {
-              "expression": {
-                "simple_expression": "3"
-              }
-            }
-          ],
+          "identifier": "kZon_1",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "{1,2,3}"
+              "simple_expression": "1"
             }
           }
         },
         "description": {
-          "description_string": "expect {1, 2, 3}"
+          "description_string": "Expect {1, 2, 3}"
         }
       },
       "annotation": null,
       "semantics": {},
       "cdl_annotations": {},
-      "isVector": true,
-      "arraySubscripts": "[3]",
+      "isVector": false,
+      "arraySubscripts": "",
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kZon",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "kZon_2": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "kZon_2",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "2"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Expect {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kZon",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "kZon_3": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "kZon_3",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "3"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Expect {1, 2, 3}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kZon",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
     },
     "kSum": {
       "type_prefix": "parameter",
@@ -120,7 +200,7 @@
           }
         },
         "description": {
-          "description_string": "array to scalar, expect 6"
+          "description_string": "Array to scalar, expect 6"
         }
       },
       "annotation": null,
@@ -131,9 +211,9 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo"
     },
-    "kNor": {
+    "kNor_1": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
@@ -141,36 +221,38 @@
       "long_class_specifier_identifier": "ArrayValExpr",
       "single_component_list": {
         "declaration": {
-          "identifier": "kNor",
-          "array_subscripts": [
-            {
-              "expression": {
-                "simple_expression": "3"
-              }
-            }
-          ],
+          "identifier": "kNor_1",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "{0.167,0.333,0.5}"
+              "simple_expression": "0.16666666666666666"
             }
           }
         },
         "description": {
-          "description_string": "array by scalar, expect {1/6, 1/3, 1/2}"
+          "description_string": "Array by scalar, expect {1/6, 1/3, 1/2}"
         }
       },
       "annotation": null,
       "semantics": {},
       "cdl_annotations": {},
-      "isVector": true,
-      "arraySubscripts": "[3]",
+      "isVector": false,
+      "arraySubscripts": "",
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kNor",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
     },
-    "off": {
+    "kNor_2": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
@@ -178,34 +260,192 @@
       "long_class_specifier_identifier": "ArrayValExpr",
       "single_component_list": {
         "declaration": {
-          "identifier": "off",
-          "array_subscripts": [
-            {
-              "expression": {
-                "simple_expression": "3"
-              }
-            }
-          ],
+          "identifier": "kNor_2",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "{1.167,1.333,1.5}"
+              "simple_expression": "0.3333333333333333"
             }
           }
         },
         "description": {
-          "description_string": "array addition"
+          "description_string": "Array by scalar, expect {1/6, 1/3, 1/2}"
         }
       },
       "annotation": null,
       "semantics": {},
       "cdl_annotations": {},
-      "isVector": true,
-      "arraySubscripts": "[3]",
+      "isVector": false,
+      "arraySubscripts": "",
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kNor",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "kNor_3": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "kNor_3",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "0.5"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Array by scalar, expect {1/6, 1/3, 1/2}"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "kNor",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
+    },
+    "off_1": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "off_1",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1.1666666666666667"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Array addition"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "off",
+        "size": [
+          3
+        ],
+        "index": [
+          1
+        ]
+      }
+    },
+    "off_2": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "off_2",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1.3333333333333333"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Array addition"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "off",
+        "size": [
+          3
+        ],
+        "index": [
+          2
+        ]
+      }
+    },
+    "off_3": {
+      "type_prefix": "parameter",
+      "type_specifier": "Real",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "ArrayValExpr",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "off_3",
+          "modification": {
+            "equal": true,
+            "expression": {
+              "simple_expression": "1.5"
+            }
+          }
+        },
+        "description": {
+          "description_string": "Array addition"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
+      "arrayExpansion": {
+        "arrayName": "off",
+        "size": [
+          3
+        ],
+        "index": [
+          3
+        ]
+      }
     },
     "u_1": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
@@ -217,7 +457,7 @@
           "identifier": "u_1"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -228,7 +468,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -249,7 +489,7 @@
           "identifier": "u_2"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -260,7 +500,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -281,7 +521,7 @@
           "identifier": "u_3"
         },
         "description": {
-          "description_string": "input of each zone"
+          "description_string": "Input of each zone"
         }
       },
       "annotation": null,
@@ -292,7 +532,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "u",
         "size": [
@@ -313,7 +553,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "sum as an output"
+          "description_string": "Sum as an output"
         }
       },
       "annotation": null,
@@ -324,7 +564,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo"
     },
     "addPar_1": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Reals.AddParameter",
@@ -344,7 +584,7 @@
                     "modification": {
                       "equal": true,
                       "expression": {
-                        "simple_expression": "1.167"
+                        "simple_expression": "1.1666666666666667"
                       }
                     }
                   }
@@ -354,7 +594,7 @@
           }
         },
         "description": {
-          "description_string": "array expression used element by element"
+          "description_string": "Array expression used element by element"
         }
       },
       "annotation": null,
@@ -365,7 +605,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "addPar",
         "size": [
@@ -394,7 +634,7 @@
                     "modification": {
                       "equal": true,
                       "expression": {
-                        "simple_expression": "1.333"
+                        "simple_expression": "1.3333333333333333"
                       }
                     }
                   }
@@ -404,7 +644,7 @@
           }
         },
         "description": {
-          "description_string": "array expression used element by element"
+          "description_string": "Array expression used element by element"
         }
       },
       "annotation": null,
@@ -415,7 +655,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "addPar",
         "size": [
@@ -454,7 +694,7 @@
           }
         },
         "description": {
-          "description_string": "array expression used element by element"
+          "description_string": "Array expression used element by element"
         }
       },
       "annotation": null,
@@ -465,7 +705,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo",
       "arrayExpansion": {
         "arrayName": "addPar",
         "size": [
@@ -508,7 +748,7 @@
                     "modification": {
                       "equal": true,
                       "expression": {
-                        "simple_expression": "{0.167,0.333,0.5}"
+                        "simple_expression": "{0.16666666666666666,0.3333333333333333,0.5}"
                       }
                     }
                   }
@@ -518,7 +758,7 @@
           }
         },
         "description": {
-          "description_string": "array expression used whole"
+          "description_string": "Array expression used whole"
         }
       },
       "annotation": null,
@@ -529,7 +769,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\ArrayValExpr.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\ArrayValExpr.mo"
     }
   },
   "requiredReferences": {

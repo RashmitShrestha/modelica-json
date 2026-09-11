@@ -46,7 +46,7 @@
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal for the replicator"
+          "description_string": "Input signal for the replicator"
         }
       },
       "annotation": null,
@@ -69,7 +69,7 @@
           "identifier": "y_1"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -101,7 +101,7 @@
           "identifier": "y_2"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -133,7 +133,7 @@
           "identifier": "y_3"
         },
         "description": {
-          "description_string": "output of each zone"
+          "description_string": "Output of each zone"
         }
       },
       "annotation": null,
@@ -183,7 +183,7 @@
           }
         },
         "description": {
-          "description_string": "replicates the input to nZon outputs"
+          "description_string": "Replicates the input to nZon outputs"
         }
       },
       "annotation": null,

@@ -1,8 +1,8 @@
 within evalAndArrays;
 
-block NestedHier_Level3 "level 3 of 3, where the propagated value is used"
+block NestedHier_Level3 "Level 3 of 3, where the propagated value is used"
 
-  parameter Real mult "from the level above";
+  parameter Real mult "From the level above";
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Measured signal";
   Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "Control signal";

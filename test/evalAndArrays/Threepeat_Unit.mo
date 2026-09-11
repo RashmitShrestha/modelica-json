@@ -1,12 +1,12 @@
 within evalAndArrays;
 
-block Threepeat_Unit "the sub sequence that Threepeat instantiates three times"
+block Threepeat_Unit "The sub sequence that Threepeat instantiates three times"
 
-  parameter Real inpVal "input value, different per instance";
-  parameter Real derivVal = inpVal + 1 "derived value, different per instance";
+  parameter Real inpVal "Input value, different per instance";
+  parameter Real derivVal = inpVal + 1 "Derived value, different per instance";
 
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "input signal";
-  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "output signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Input signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "Output signal";
 
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter multer(
     final k=inpVal) "Gain of this instance";

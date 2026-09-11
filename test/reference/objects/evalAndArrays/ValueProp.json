@@ -23,7 +23,7 @@
           }
         },
         "description": {
-          "description_string": "user supplied, should equal 1"
+          "description_string": "User supplied, should equal 1"
         }
       },
       "annotation": null,
@@ -53,7 +53,7 @@
           }
         },
         "description": {
-          "description_string": "user supplied, should equal 2"
+          "description_string": "User supplied, should equal 2"
         }
       },
       "annotation": null,
@@ -83,7 +83,7 @@
           }
         },
         "description": {
-          "description_string": "derived from supplied value"
+          "description_string": "Derived from supplied value"
         }
       },
       "annotation": null,
@@ -106,7 +106,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "output"
+          "description_string": "Output"
         }
       },
       "annotation": null,
@@ -147,7 +147,7 @@
           }
         },
         "description": {
-          "description_string": "carries input1 into the sequence"
+          "description_string": "Carries input1 into the sequence"
         }
       },
       "annotation": null,
@@ -188,7 +188,7 @@
           }
         },
         "description": {
-          "description_string": "carries input2 into the sequence"
+          "description_string": "Carries input2 into the sequence"
         }
       },
       "annotation": null,
@@ -211,7 +211,7 @@
           "identifier": "add2"
         },
         "description": {
-          "description_string": "sums input1 and input2"
+          "description_string": "Sums input1 and input2"
         }
       },
       "annotation": null,
@@ -252,7 +252,7 @@
           }
         },
         "description": {
-          "description_string": "multiplies value by the derivedVal"
+          "description_string": "Multiplies value by the derivedVal"
         }
       },
       "annotation": null,

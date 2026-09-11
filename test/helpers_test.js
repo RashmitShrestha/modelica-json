@@ -14,7 +14,7 @@ const ut = require('../lib/util')
  * Every .json file in a directory (no extension included)
  *
  * @param {string} dir - directory to list
- * @returns {string[]} the base names, e.g. ['ExpEval', 'Threepeat.uni1']
+ * @returns {string[]} the base names, e.g. ['ExpEval', 'Threepeat_Unit.uni1']
  */
 function jsonBaseNames (dir) {
   return fs.readdirSync(dir)
@@ -25,8 +25,8 @@ function jsonBaseNames (dir) {
 /**
  * path of the objects json for a class or instance inside a directory
  *
- * Names may contain dots (`Threepeat.uni1`) which denote the instance
- * path as they are subsequences called within a top level sequence
+ * A sub-sequence file is named after the class it came from and the instance
+ * path it was resolved at (`Threepeat_Unit.uni1`), joined with `.`
  *
  * @param {string} dir - directory holding the objects json
  * @param {string} name - class name or instance path
@@ -303,7 +303,7 @@ function ownClass (objectsJson) {
  *     a sequence from the package file, which is not a sequence at all.
  *   * `instanceOf`, which only the per instantiation files carry, names the
  *     class an instantiation came from. The union of those names over the
- *     package is exactly its set of sub-sequences.
+ *     package is exactly its set of sub-sequence classes.
  *
  * The class file of a sub-sequence is deliberately not a test case: its
  * parameters take their values at the point of instantiation, so it still holds
@@ -322,10 +322,10 @@ function testCaseNames (dir) {
   }))
 
   // Every class that some instantiation in this package came from.
-  const subSequences = new Set()
+  const subSequenceClasses = new Set()
   objectsJsons.forEach(function (objectsJson) {
     Object.values(objectsJson.instances || {}).forEach(function (instance) {
-      if (instance.instanceOf !== undefined) subSequences.add(instance.instanceOf)
+      if (instance.instanceOf !== undefined) subSequenceClasses.add(instance.instanceOf)
     })
   })
 
@@ -338,7 +338,8 @@ function testCaseNames (dir) {
       return
     }
 
-    if (subSequences.has(self.within + '.' + name)) {
+    // Drops the class file of a sub-sequence, which still holds expressions.
+    if (subSequenceClasses.has(self.within + '.' + name)) {
       return
     }
 
@@ -350,6 +351,55 @@ function testCaseNames (dir) {
   })
 
   return { mainCases, instanceCases, testCases: mainCases.concat(instanceCases) }
+}
+
+/**
+ * The sub-sequence files one sequence pulls in, transitively.
+ *
+ * @param {string} dir - directory holding the objects json
+ * @param {string} name - base name of the sequence to start from
+ * @returns {string[]} the base names of the files reached, in the order found
+ */
+function subSequenceFiles (dir, name) {
+  const found = []
+  const pending = [name]
+
+  while (pending.length > 0) {
+    const objectsJson = readObjects(dir, pending.shift())
+    Object.values(objectsJson.instances || {}).forEach(function (instance) {
+      if (instance.subInstanceDefinition === undefined) return
+
+      const within = ownClass(objectsJson).within
+      const file = (within === undefined || within === null || within === '')
+        ? instance.subInstanceDefinition
+        : instance.subInstanceDefinition.slice(within.length + 1)
+
+      if (found.includes(file)) return
+      found.push(file)
+      pending.push(file)
+    })
+  }
+  return found
+}
+
+/**
+ * The sub-sequence blocks of one sequence, in the shape generateCxf hands them
+ * to the CXF extractor.
+ *
+ * @param {string} dir - directory holding the objects json
+ * @param {string} name - base name of the sequence to start from
+ * @returns {Array<Object>} one `{blockName, instances, requiredReferences}` each
+ */
+function subBlocks (dir, name) {
+  return subSequenceFiles(dir, name).map(function (file) {
+    const objects = readNormalizedObjects(objectsJsonPath(dir, file))
+    return {
+      // The file name is the name the block calls itself, without its package.
+      blockName: file,
+      instances: objects.instances,
+      requiredReferences: objects.requiredReferences
+    }
+  })
 }
 
 module.exports.jsonBaseNames = jsonBaseNames
@@ -367,3 +417,5 @@ module.exports.writeDiffArtifacts = writeDiffArtifacts
 module.exports.readObjects = readObjects
 module.exports.ownClass = ownClass
 module.exports.testCaseNames = testCaseNames
+module.exports.subSequenceFiles = subSequenceFiles
+module.exports.subBlocks = subBlocks

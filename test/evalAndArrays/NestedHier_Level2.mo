@@ -1,12 +1,12 @@
 within evalAndArrays;
 
-block NestedHier_Level2 "level 2 of 3, declares no values of its own"
+block NestedHier_Level2 "Level 2 of 3, declares no values of its own"
 
-  parameter Integer nZon "from the level above";
-  parameter Real mult "from the level above";
+  parameter Integer nZon "From the level above";
+  parameter Real mult "From the level above";
 
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "input signal";
-  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "output signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Input signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "Output signal";
 
   NestedHier_Level3 lev3(
     final mult=mult/nZon) "Expect mult = 4/3";

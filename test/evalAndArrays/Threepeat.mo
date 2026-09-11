@@ -1,20 +1,20 @@
 within evalAndArrays;
 
-block Threepeat "the same subsequence three times with a different value each"
+block Threepeat "The same subsequence three times with a different value each"
 
-  parameter Real inpOne = 1 "first instance value";
-  parameter Real inpTwo = 2 "second instance value";
-  parameter Real inpThr = 3 "third instance value";
+  parameter Real inpOne = 1 "First instance value";
+  parameter Real inpTwo = 2 "Second instance value";
+  parameter Real inpThr = 3 "Third instance value";
 
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "input signal";
-  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "sum of the three outputs";
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Input signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "Sum of the three outputs";
 
-  Threepeat_Unit uni1(final inpVal=inpOne) "expect inpVal = 1, derivVal = 2";
-  Threepeat_Unit uni2(final inpVal=inpTwo) "expect inpVal = 2, derivVal = 3";
-  Threepeat_Unit uni3(final inpVal=inpThr) "expect inpVal = 3, derivVal = 4";
+  Threepeat_Unit uni1(final inpVal=inpOne) "Expect inpVal = 1, derivVal = 2";
+  Threepeat_Unit uni2(final inpVal=inpTwo) "Expect inpVal = 2, derivVal = 3";
+  Threepeat_Unit uni3(final inpVal=inpThr) "Expect inpVal = 3, derivVal = 4";
 
   Buildings.Controls.OBC.CDL.Reals.MultiSum mulSum(
-    final nin=3) "sum of the three instance outputs";
+    final nin=3) "Sum of the three instance outputs";
 
 equation
   connect(u, uni1.u);

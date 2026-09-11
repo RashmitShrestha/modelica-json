@@ -2,7 +2,7 @@
   "instances": {
     "Threepeat": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block"
     },
@@ -23,7 +23,7 @@
           }
         },
         "description": {
-          "description_string": "first instance value"
+          "description_string": "First instance value"
         }
       },
       "annotation": null,
@@ -34,7 +34,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     },
     "inpTwo": {
       "type_prefix": "parameter",
@@ -53,7 +53,7 @@
           }
         },
         "description": {
-          "description_string": "second instance value"
+          "description_string": "Second instance value"
         }
       },
       "annotation": null,
@@ -64,7 +64,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     },
     "inpThr": {
       "type_prefix": "parameter",
@@ -83,7 +83,7 @@
           }
         },
         "description": {
-          "description_string": "third instance value"
+          "description_string": "Third instance value"
         }
       },
       "annotation": null,
@@ -94,7 +94,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     },
     "u": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
@@ -106,7 +106,7 @@
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -117,7 +117,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     },
     "y": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
@@ -129,7 +129,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "sum of the three outputs"
+          "description_string": "Sum of the three outputs"
         }
       },
       "annotation": null,
@@ -140,10 +140,10 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     },
     "uni1": {
-      "type_specifier": "evalAndArrays.Threepeat.uni1",
+      "type_specifier": "evalAndArrays.Threepeat_Unit",
       "type": "element",
       "compositionSpecifier": "public",
       "long_class_specifier_identifier": "Threepeat",
@@ -165,12 +165,25 @@
                     }
                   }
                 }
+              },
+              {
+                "element_modification_or_replaceable": {
+                  "element_modification": {
+                    "name": "derivVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "2"
+                      }
+                    }
+                  }
+                }
               }
             ]
           }
         },
         "description": {
-          "description_string": "expect inpVal = 1, derivVal = 2"
+          "description_string": "Expect inpVal = 1, derivVal = 2"
         }
       },
       "annotation": null,
@@ -181,10 +194,11 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo",
+      "subInstanceDefinition": "evalAndArrays.Threepeat_Unit.uni1"
     },
     "uni2": {
-      "type_specifier": "evalAndArrays.Threepeat.uni2",
+      "type_specifier": "evalAndArrays.Threepeat_Unit",
       "type": "element",
       "compositionSpecifier": "public",
       "long_class_specifier_identifier": "Threepeat",
@@ -206,12 +220,25 @@
                     }
                   }
                 }
+              },
+              {
+                "element_modification_or_replaceable": {
+                  "element_modification": {
+                    "name": "derivVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "3"
+                      }
+                    }
+                  }
+                }
               }
             ]
           }
         },
         "description": {
-          "description_string": "expect inpVal = 2, derivVal = 3"
+          "description_string": "Expect inpVal = 2, derivVal = 3"
         }
       },
       "annotation": null,
@@ -222,10 +249,11 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo",
+      "subInstanceDefinition": "evalAndArrays.Threepeat_Unit.uni2"
     },
     "uni3": {
-      "type_specifier": "evalAndArrays.Threepeat.uni3",
+      "type_specifier": "evalAndArrays.Threepeat_Unit",
       "type": "element",
       "compositionSpecifier": "public",
       "long_class_specifier_identifier": "Threepeat",
@@ -247,12 +275,25 @@
                     }
                   }
                 }
+              },
+              {
+                "element_modification_or_replaceable": {
+                  "element_modification": {
+                    "name": "derivVal",
+                    "modification": {
+                      "equal": true,
+                      "expression": {
+                        "simple_expression": "4"
+                      }
+                    }
+                  }
+                }
               }
             ]
           }
         },
         "description": {
-          "description_string": "expect inpVal = 3, derivVal = 4"
+          "description_string": "Expect inpVal = 3, derivVal = 4"
         }
       },
       "annotation": null,
@@ -263,7 +304,8 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo",
+      "subInstanceDefinition": "evalAndArrays.Threepeat_Unit.uni3"
     },
     "mulSum": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiSum",
@@ -293,7 +335,7 @@
           }
         },
         "description": {
-          "description_string": "sum of the three instance outputs"
+          "description_string": "Sum of the three instance outputs"
         }
       },
       "annotation": null,
@@ -304,7 +346,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat.mo"
     }
   },
   "requiredReferences": {

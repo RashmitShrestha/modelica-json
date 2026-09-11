@@ -53,7 +53,7 @@
           }
         },
         "description": {
-          "description_string": "expected to be true"
+          "description_string": "Expected to be true"
         }
       },
       "annotation": null,
@@ -140,7 +140,7 @@
           }
         },
         "description": {
-          "description_string": "kept"
+          "description_string": "Kept"
         }
       },
       "annotation": null,

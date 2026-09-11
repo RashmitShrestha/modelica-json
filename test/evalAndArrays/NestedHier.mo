@@ -3,10 +3,10 @@ within evalAndArrays;
 block NestedHier "Level 1 of 3, the only level that declares values"
 
   parameter Integer nZon = 3 "# of zones";
-  parameter Real multTop = 2 "multiplier value for the top level";
+  parameter Real multTop = 2 "Multiplier value for the top level";
 
-  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "input signal";
-  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "output signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Input signal";
+  Buildings.Controls.OBC.CDL.Interfaces.RealOutput y "Output signal";
 
   NestedHier_Level2 lev2(
     final nZon=nZon,

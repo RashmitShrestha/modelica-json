@@ -184,36 +184,6 @@
       "within": "evalAndArrays",
       "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Defaulting.mo"
     },
-    "kNone": {
-      "type_prefix": "parameter",
-      "type_specifier": "Real",
-      "type": "element",
-      "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Defaulting",
-      "single_component_list": {
-        "declaration": {
-          "identifier": "kNone",
-          "modification": {
-            "equal": true,
-            "expression": {
-              "simple_expression": "0.0"
-            }
-          }
-        },
-        "description": {
-          "description_string": "Nothing, expect the Real data type default"
-        }
-      },
-      "annotation": null,
-      "semantics": {},
-      "cdl_annotations": {},
-      "isVector": false,
-      "arraySubscripts": "",
-      "replaceable": null,
-      "constraining_clause": null,
-      "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Defaulting.mo"
-    },
     "havDef": {
       "type_prefix": "parameter",
       "type_specifier": "Boolean",

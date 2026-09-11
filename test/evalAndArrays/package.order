@@ -3,6 +3,11 @@ ArrayValExpr
 CondComps
 Defaulting
 ExpEval
+FlagsArray
+FlagsBoth
+FlagsEval
+FlagsNone
+Flags_Unit
 NestedHier
 NestedHier_Level2
 NestedHier_Level3

@@ -17,7 +17,7 @@
           "identifier": "nZon"
         },
         "description": {
-          "description_string": "from the level above"
+          "description_string": "From the level above"
         }
       },
       "annotation": null,
@@ -41,7 +41,7 @@
           "identifier": "mult"
         },
         "description": {
-          "description_string": "from the level above"
+          "description_string": "From the level above"
         }
       },
       "annotation": null,
@@ -64,7 +64,7 @@
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -87,7 +87,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,

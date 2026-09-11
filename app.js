@@ -75,8 +75,22 @@ parser.addArgument(
     action: 'storeTrue'
   }
 )
+parser.addArgument(
+  ['--evaluateExpressions'],
+  {
+    help: 'If this flag is present, all expressions are resolved into literal values.',
+    action: 'storeTrue'
+  }
+)
+parser.addArgument(
+  ['--flattenArrays'],
+  {
+    help: 'If this flag is present, arrays are flattened into a single dimension, with the index appended to the variable or component.',
+    action: 'storeTrue'
+  }
+)
 parser.addArgument( // argument to specify value propogation json file. adding value prop only for modelica -> cxf pipeline
-  ['-pv', '--parameter_value'],
+  ['-pv', '--parameterValue'],
   {
     help: 'Specify a file for parameter values with the default being params.json',
     defaultValue: 'params.json'
@@ -132,7 +146,7 @@ if (args.output === 'modelica') {
     function (resolve, reject) {
       const moFiles = ut.getMoFiles(args.file)
       // Parse the json representation for moFiles
-      jsons = pa.getJsons(moFiles, args.output, args.directory, args.prettyPrint, args.elementary, args.cxfCore, args.mode, args.parameter_value)
+      jsons = pa.getJsons(moFiles, args.output, args.directory, args.prettyPrint, args.elementary, args.cxfCore, args.mode, args.parameterValue, args.evaluateExpressions, args.flattenArrays)
       resolve(0)
     }
   )

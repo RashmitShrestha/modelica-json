@@ -17,7 +17,7 @@
           "identifier": "inpVal"
         },
         "description": {
-          "description_string": "input value, different per instance"
+          "description_string": "Input value, different per instance"
         }
       },
       "annotation": null,
@@ -47,7 +47,7 @@
           }
         },
         "description": {
-          "description_string": "derived value, different per instance"
+          "description_string": "Derived value, different per instance"
         }
       },
       "annotation": null,
@@ -70,7 +70,7 @@
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -93,7 +93,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,

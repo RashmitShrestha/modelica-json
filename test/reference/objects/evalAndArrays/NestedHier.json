@@ -2,7 +2,7 @@
   "instances": {
     "NestedHier": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block"
     },
@@ -34,7 +34,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo"
     },
     "multTop": {
       "type_prefix": "parameter",
@@ -53,7 +53,7 @@
           }
         },
         "description": {
-          "description_string": "multiplier value for the top level"
+          "description_string": "Multiplier value for the top level"
         }
       },
       "annotation": null,
@@ -64,7 +64,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo"
     },
     "u": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
@@ -76,7 +76,7 @@
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -87,7 +87,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo"
     },
     "y": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
@@ -99,7 +99,7 @@
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,
@@ -110,10 +110,10 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo"
     },
     "lev2": {
-      "type_specifier": "evalAndArrays.NestedHier.lev2",
+      "type_specifier": "evalAndArrays.NestedHier_Level2",
       "type": "element",
       "compositionSpecifier": "public",
       "long_class_specifier_identifier": "NestedHier",
@@ -165,7 +165,8 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\NestedHier.mo",
+      "subInstanceDefinition": "evalAndArrays.NestedHier_Level2.lev2"
     }
   },
   "requiredReferences": {

@@ -3,10 +3,12 @@ const as = require('assert')
 const mo = require('mocha')
 const path = require('path')
 const fs = require('fs')
+const os = require('os')
 const logger = require('winston')
 
 const pa = require('../lib/parser')
 const ut = require('../lib/util')
+const oe = require('../lib/objectExtractor')
 const cxfExt = require('../lib/cxfExtractor')
 
 // function with helper files
@@ -36,7 +38,12 @@ logger.level = 'error'
 //   * an array of components becomes one plain component per element, named
 //     "<name>_<index>"", and the connections are expanded to match
 //   * conditional components that are "false" are removed
-//   * each instantiated sub sequences gets its own file based on the path of the instance
+//   * each instantiated sub sequence gets a file of its own, named after the
+//     class it came from and the instance path it was resolved at, e.g.
+//     "Threepeat_Unit.uni1.json" beside "Threepeat.json"
+//   * the component that instantiates it names the class it came from as its
+//     `type_specifier`, names the resolved block as `subInstanceDefinition` -- which is
+//     the link the cxf layer follows -- and carries the values it resolved to
 
 // The cxf layer gets no specific references; all of it's input comes solely from the objects layer,
 // the bottleneck is the correctness of the objects layer. Thus the cxf creator is unaware of the expression evaluation
@@ -64,9 +71,12 @@ mo.describe('evaluation and arrays', function () {
       hp.removeOutputDirs(['objects', 'json'])
       // dumps of the previous run, so whatever is left behind belongs to this one
       if (fs.existsSync(hp.diffDir())) ut.removeDir(hp.diffDir())
+      /* Both features on: this suite is what tests them, so it asks for them
+         explicitly rather than relying on a default. */
       pa.getJsons(ut.getMoFiles(moDir), 'semantic', 'current', true,
         /* generateElementary= */ false, /* generateCxfCore= */ false,
-        /* mode= */ 'cdl', /* valueProp= */ paramsFile)
+        /* mode= */ 'cdl', /* valueProp= */ paramsFile,
+        /* evaluateExpressions= */ true, /* flattenArrays= */ true)
     })
 
     // remove after running the tests just in case; the dumps a failing
@@ -187,12 +197,13 @@ mo.describe('evaluation and arrays', function () {
     // the graph each test case produced, filled in below and read by the last test
     const graphs = {}
 
-    // creating the cxf graphs for each test case
+    // built through the way the cxf does it; a sequence gets its subsequences then a graph is built from all of it
     testCases.forEach(function (name) {
       mo.it('CXF graph of ' + name, function () {
         const objectsJson = hp.readNormalizedObjects(hp.objectsJsonPath(referenceDir, name))
         const cxf = cxfExt.getCxfGraph(
-          objectsJson.instances, objectsJson.requiredReferences, name, false, false)
+          objectsJson.instances, objectsJson.requiredReferences, name, false, false,
+          mainCases.includes(name) ? hp.subBlocks(referenceDir, name) : [])
 
         // assert that the CXF graph is not empty
         as.ok(cxf !== null && Array.isArray(cxf['@graph']) && cxf['@graph'].length > 0,
@@ -201,18 +212,16 @@ mo.describe('evaluation and arrays', function () {
       })
     })
 
-    mo.it('Every instantiated sub-sequence equates to a valid block ', function () {
-      // finally see if the sub-sequences in the CXF graphs resolve to blocks
-      const blocks = new Set()
-      Object.values(graphs).forEach(function (cxf) {
-        cxf['@graph'].forEach(function (node) {
-          if (node['@type'] === 'S231:Block') blocks.add(node['@id'])
-        })
-      })
-
-      // collect dangling blocks indicating an unresolved or missing block definition
+    mo.it('Every sequence resolves its own sub-sequences', function () {
+    // in the root sequence, every subSequence must be fully defined, thus check for dangling blocks
       const dangling = []
-      Object.entries(graphs).forEach(function ([name, cxf]) {
+      mainCases.forEach(function (name) {
+        const cxf = graphs[name]
+        if (cxf === undefined) return
+        const blocks = new Set(cxf['@graph']
+          .filter(function (node) { return node['@type'] === 'S231:Block' })
+          .map(function (node) { return node['@id'] }))
+
         cxf['@graph'].forEach(function (node) {
           const type = node['@type']
           if (typeof type !== 'string') return
@@ -224,6 +233,111 @@ mo.describe('evaluation and arrays', function () {
       })
       // assert that there are no dangling blocks
       as.deepStrictEqual(dangling, [], 'Components with no block definition:\n  ' + dangling.join('\n  '))
+    })
+  })
+
+ 
+  mo.describe('Testing the parameters a sequence leaves without a value', function () {
+    const errorMoDir = path.join('test', 'evalAndArraysErrors')
+    // supplies every parameter the Modelica sources of that package leave open
+    const errorParamsFile = path.join(__dirname, 'reference', 'params', 'evalAndArraysErrors', 'params.json')
+
+    // one output directory per run, so that "no files" is a statement about
+    // this run and not about whatever an earlier one left behind
+    const outDirs = []
+    function freshOutDir () {
+      const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'evalAndArraysErrors-'))
+      outDirs.push(dir)
+      return dir
+    }
+
+    mo.after(function () {
+      outDirs.forEach(function (dir) { if (fs.existsSync(dir)) ut.removeDir(dir) })
+    })
+
+    // every file below dir, so that an empty tree and a missing one read alike
+    function filesUnder (dir) {
+      if (!fs.existsSync(dir)) return []
+      return fs.readdirSync(dir, { withFileTypes: true }).reduce(function (found, entry) {
+        const full = path.join(dir, entry.name)
+        return found.concat(entry.isDirectory() ? filesUnder(full) : [full])
+      }, [])
+    }
+
+    // the same call the suite above makes, against the package of unresolved
+    // parameters and with the values file the case under test asks for
+    function run (outDir, valuesFile) {
+      pa.getJsons(ut.getMoFiles(errorMoDir), 'semantic', outDir, true,
+        /* generateElementary= */ false, /* generateCxfCore= */ false,
+        /* mode= */ 'cdl', /* valueProp= */ valuesFile,
+        /* evaluateExpressions= */ true, /* flattenArrays= */ true)
+    }
+
+    mo.it('A parameter of the sequence itself that nothing gives a value to stops the run', function () {
+      const outDir = freshOutDir()
+      as.throws(function () { run(outDir, null) }, oe.UnresolvedParameterError)
+
+      // DefaultingError.kNone is declared with no binding and no min or max, so
+      // nothing in the source constrains it and no value was supplied
+      let raised = null
+      try { run(outDir, null) } catch (error) { raised = error }
+      as.strictEqual(raised.className, 'evalAndArraysErrors.DefaultingError')
+      as.deepStrictEqual(raised.parameters, ['kNone'])
+    })
+
+    mo.it('A parameter the instantiation leaves unbound stops the run, named by its instance path', function () {
+      /* Only DefaultingError is supplied, so the run gets past it and stops on
+         ThreepeatUnbound instead: uni1 is declared without the final inpVal its
+         siblings carry, so the sub sequence has a parameter the parent never
+         binds. It is named by the path from the sequence down, which is the key
+         the values file would have to use to answer it. */
+      const outDir = freshOutDir()
+      const partialParams = path.join(outDir, 'partial.json')
+      fs.writeFileSync(partialParams, JSON.stringify({ DefaultingError: { kNone: 0.5 } }))
+
+      let raised = null
+      try { run(outDir, partialParams) } catch (error) { raised = error }
+
+      as.ok(raised instanceof oe.UnresolvedParameterError,
+        'Expected an UnresolvedParameterError, got ' + raised)
+      as.strictEqual(raised.className, 'evalAndArraysErrors.ThreepeatUnbound')
+      as.deepStrictEqual(raised.parameters, ['uni1.inpVal'])
+    })
+
+    mo.it('No files are written by a run that stops', function () {
+      // the whole point of stopping: nothing downstream is handed a sequence
+      // holding a value this parser invented for it
+      const outDir = freshOutDir()
+      as.throws(function () { run(outDir, null) }, oe.UnresolvedParameterError)
+
+      const written = filesUnder(outDir)
+      as.deepStrictEqual(written, [], 'A run that stopped still wrote:\n  ' + written.join('\n  '))
+    })
+
+    mo.it('A supplied value resolves the parameter the instantiation leaves unbound', function () {
+      /* The same package as the two cases above, and the same unbound uni1,
+         with every open parameter answered by the values file. The run is
+         expected to go through, and the sub sequence to carry the supplied
+         value rather than a default. */
+      const outDir = freshOutDir()
+      as.doesNotThrow(function () { run(outDir, errorParamsFile) })
+
+      const objectsDir = path.join(outDir, 'objects', errorMoDir)
+      const uni1 = hp.objectsJsonPath(objectsDir, 'Threepeat_Unit.uni1')
+      as.ok(fs.existsSync(uni1), 'No objects json was generated at ' + uni1)
+
+      /* inpVal is what the values file supplied. derivVal is declared as
+         inpVal + 1 and is checked with it, because a supplied value that the
+         expressions of the sub sequence do not see is only half resolved. */
+      const instances = hp.readNormalizedObjects(uni1).instances
+      const supplied = JSON.parse(fs.readFileSync(errorParamsFile, 'utf8')).ThreepeatUnbound['uni1.inpVal']
+      const differences = []
+      hp.compare(hp.parameterValue(instances.inpVal), String(supplied),
+        'Threepeat_Unit.uni1.inpVal', differences, 0.001)
+      hp.compare(hp.parameterValue(instances.derivVal), String(supplied + 1),
+        'Threepeat_Unit.uni1.derivVal', differences, 0.001)
+      as.deepStrictEqual(differences, [],
+        'The supplied value did not reach the sub sequence: ' + differences.join(', '))
     })
   })
 })

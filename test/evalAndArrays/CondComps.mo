@@ -3,7 +3,7 @@ within evalAndArrays;
 block CondComps "Components kept or removed based on evaluated expressions"
 
   parameter Integer nZon = 1 "# of zones";
-  parameter Boolean conditionalVal = true "expected to be true";
+  parameter Boolean conditionalVal = true "Expected to be true";
 
   Buildings.Controls.OBC.CDL.Interfaces.RealInput u "Measured signal";
 
@@ -11,9 +11,9 @@ block CondComps "Components kept or removed based on evaluated expressions"
 
 
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter multKeep(
-    final k=nZon) if conditionalVal "kept";
+    final k=nZon) if conditionalVal "Kept";
   Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter multDel(
-    final k=0) if not conditionalVal "removed";
+    final k=0) if not conditionalVal "Removed";
 
 
 equation

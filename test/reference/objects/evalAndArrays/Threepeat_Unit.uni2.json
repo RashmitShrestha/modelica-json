@@ -1,8 +1,8 @@
 {
   "instances": {
-    "Threepeat.uni2": {
+    "Threepeat_Unit.uni2": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo",
       "type": "long_class_specifier",
       "class_prefixes": "block",
       "instanceOf": "evalAndArrays.Threepeat_Unit"
@@ -12,7 +12,7 @@
       "type_specifier": "Real",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "inpVal",
@@ -24,7 +24,7 @@
           }
         },
         "description": {
-          "description_string": "input value, different per instance"
+          "description_string": "Input value, different per instance"
         }
       },
       "annotation": null,
@@ -35,14 +35,14 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     },
     "derivVal": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "derivVal",
@@ -54,7 +54,7 @@
           }
         },
         "description": {
-          "description_string": "derived value, different per instance"
+          "description_string": "Derived value, different per instance"
         }
       },
       "annotation": null,
@@ -65,19 +65,19 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     },
     "u": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -88,19 +88,19 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     },
     "y": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,
@@ -111,13 +111,13 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     },
     "multer": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Reals.MultiplyByParameter",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "multer",
@@ -152,13 +152,13 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     },
     "adder": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Reals.AddParameter",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "Threepeat.uni2",
+      "long_class_specifier_identifier": "Threepeat_Unit.uni2",
       "single_component_list": {
         "declaration": {
           "identifier": "adder",
@@ -193,7 +193,7 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\Threepeat_Unit.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Threepeat_Unit.mo"
     }
   },
   "requiredReferences": {

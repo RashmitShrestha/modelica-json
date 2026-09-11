@@ -1,30 +1,23 @@
 {
   "instances": {
-    "NestedHier.lev2": {
+    "Flags_Unit": {
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo",
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo",
       "type": "long_class_specifier",
-      "class_prefixes": "block",
-      "instanceOf": "evalAndArrays.NestedHier_Level2"
+      "class_prefixes": "block"
     },
     "nZon": {
       "type_prefix": "parameter",
       "type_specifier": "Integer",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "NestedHier.lev2",
+      "long_class_specifier_identifier": "Flags_Unit",
       "single_component_list": {
         "declaration": {
-          "identifier": "nZon",
-          "modification": {
-            "equal": true,
-            "expression": {
-              "simple_expression": "3"
-            }
-          }
+          "identifier": "nZon"
         },
         "description": {
-          "description_string": "from the level above"
+          "description_string": "# of zones, propagated from the parent"
         }
       },
       "annotation": null,
@@ -35,26 +28,64 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
-    "mult": {
+    "status": {
+      "type_prefix": "parameter",
+      "type_specifier": "Boolean",
+      "type": "element",
+      "compositionSpecifier": "public",
+      "long_class_specifier_identifier": "Flags_Unit",
+      "single_component_list": {
+        "declaration": {
+          "identifier": "status"
+        },
+        "description": {
+          "description_string": "Flag, propagated from the parent"
+        }
+      },
+      "annotation": null,
+      "semantics": {},
+      "cdl_annotations": {},
+      "isVector": false,
+      "arraySubscripts": "",
+      "replaceable": null,
+      "constraining_clause": null,
+      "within": "evalAndArrays",
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
+    },
+    "conditional": {
       "type_prefix": "parameter",
       "type_specifier": "Real",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "NestedHier.lev2",
+      "long_class_specifier_identifier": "Flags_Unit",
       "single_component_list": {
         "declaration": {
-          "identifier": "mult",
+          "identifier": "conditional",
           "modification": {
             "equal": true,
             "expression": {
-              "simple_expression": "4"
+              "if_expression": {
+                "if_elseif": [
+                  {
+                    "condition": {
+                      "simple_expression": "status"
+                    },
+                    "then": {
+                      "simple_expression": "nZon"
+                    }
+                  }
+                ],
+                "else_expression": {
+                  "simple_expression": "0"
+                }
+              }
             }
           }
         },
         "description": {
-          "description_string": "from the level above"
+          "description_string": "Derived inside the sub sequence, expect 3"
         }
       },
       "annotation": null,
@@ -65,19 +96,19 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
     "u": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealInput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "NestedHier.lev2",
+      "long_class_specifier_identifier": "Flags_Unit",
       "single_component_list": {
         "declaration": {
           "identifier": "u"
         },
         "description": {
-          "description_string": "input signal"
+          "description_string": "Input signal"
         }
       },
       "annotation": null,
@@ -88,19 +119,19 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
     "y": {
       "type_specifier": "Buildings.Controls.OBC.CDL.Interfaces.RealOutput",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "NestedHier.lev2",
+      "long_class_specifier_identifier": "Flags_Unit",
       "single_component_list": {
         "declaration": {
           "identifier": "y"
         },
         "description": {
-          "description_string": "output signal"
+          "description_string": "Output signal"
         }
       },
       "annotation": null,
@@ -111,27 +142,27 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     },
-    "lev3": {
-      "type_specifier": "evalAndArrays.NestedHier.lev2.lev3",
+    "adder": {
+      "type_specifier": "Buildings.Controls.OBC.CDL.Reals.AddParameter",
       "type": "element",
       "compositionSpecifier": "public",
-      "long_class_specifier_identifier": "NestedHier.lev2",
+      "long_class_specifier_identifier": "Flags_Unit",
       "single_component_list": {
         "declaration": {
-          "identifier": "lev3",
+          "identifier": "adder",
           "modification": {
             "class_modification": [
               {
                 "element_modification_or_replaceable": {
                   "final": true,
                   "element_modification": {
-                    "name": "mult",
+                    "name": "p",
                     "modification": {
                       "equal": true,
                       "expression": {
-                        "simple_expression": "1.333"
+                        "simple_expression": "conditional"
                       }
                     }
                   }
@@ -141,7 +172,7 @@
           }
         },
         "description": {
-          "description_string": "Expect mult = 4/3"
+          "description_string": "The one elementary block of the sub sequence"
         }
       },
       "annotation": null,
@@ -152,15 +183,15 @@
       "replaceable": null,
       "constraining_clause": null,
       "within": "evalAndArrays",
-      "fullMoFilePath": "test\\evalAndArrays\\Modelica\\NestedHier_Level2.mo"
+      "fullMoFilePath": "test\\evalAndArrays\\Flags_Unit.mo"
     }
   },
   "requiredReferences": {
     "connections": {
       "u": [
-        "lev3.u"
+        "adder.u"
       ],
-      "lev3.y": [
+      "adder.y": [
         "y"
       ]
     }
